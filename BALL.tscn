@@ -1,0 +1,51 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://BALL.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/player/roller_6.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/player/roller_7.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/player/roller_5.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/player/roller_4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/player/roller_0.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/player/roller_1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/player/roller_2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/player/roller_3.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "walk",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.2859, 13.939 )
+
+[node name="BALL" type="KinematicBody2D"]
+position = Vector2( -0.0877914, -0.0877914 )
+script = ExtResource( 1 )
+speed = 90
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1.93142 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( -13.8711, -0.526751 )
+enabled = true
+cast_to = Vector2( 0, 16.77 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
