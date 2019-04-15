@@ -1,16 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/player/idle.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/player/jump.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/player/jumptrans.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/player/attack.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/player/attack1.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/player/fall.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/player/run1.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/player/run1 (1).png" type="Texture" id=9]
-[ext_resource path="res://Sprites/player/run1 (2).png" type="Texture" id=10]
-[ext_resource path="res://Sprites/player/run1 (3).png" type="Texture" id=11]
+[ext_resource path="res://Vachika.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/player/vacheidle.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/player/vachejump.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/player/attack.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/player/attack1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/player/vachefall.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/player/vachewalk1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/player/vachewalk 2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/player/vachewalk 3.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -19,22 +17,22 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "dead",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "attack",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "run",
 "speed": 8.0
